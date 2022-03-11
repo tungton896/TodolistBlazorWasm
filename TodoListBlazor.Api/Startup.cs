@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TodoListBlazor.Api.Data;
+using TodoListBlazor.Api.Repositories;
 
 namespace TodoListBlazor.Api
 {
@@ -38,6 +39,7 @@ namespace TodoListBlazor.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TodoListBlazor.Api", Version = "v1" });
             });
+            services.AddTransient<ITaskRepository, TaskRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
